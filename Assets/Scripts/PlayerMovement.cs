@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public float speedJohn = 3f; //переменная влияющая на скорость
 
     Animator m_Animator;
     Rigidbody m_Rigidbody;
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnAnimatorMove ()
     {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * speedJohn * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation (m_Rotation);
     }
 }
